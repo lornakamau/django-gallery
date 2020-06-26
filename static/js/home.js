@@ -21,10 +21,3 @@ items.forEach((item, index) => {
   item.classList.contains('is-active') && handleIndicator(item);
 });
 
-$('.modal').modal('show');
-
-
-$('#btn-form').on('click', function() {
-   $('.show').show();
-   $('.hide').hide();
-});

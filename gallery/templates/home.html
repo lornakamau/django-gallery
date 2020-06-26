@@ -2,6 +2,7 @@
 {% load static%}
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   {% if title %}
@@ -13,6 +14,7 @@
   {% block styles %}
   {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/card.css' %}">
   {% endblock %}
 </head>
 
@@ -21,10 +23,12 @@
   {% block content %}
   {% for image in images %}
   <h2>{{image.name}}</h2>
-  <img src="{{image.photo.url}}" alt="image" data-toggle="modal" data-target="#staticBackdrop">
+  <img src="{{image.photo.url}}" alt="image" data-toggle="modal" data-target="#imageModal">
   {% endfor %}
-  <div data-component="cta-newsletter-modal" >
-    <div class="modal fade" id="newsletter-modal">
+  <!-- Modal -->
+  <div id="myModal">
+    <div class="modal fade" id="imageModals" data-backdrop="static" tabindex="-1" role="dialog"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content rounded-0 border-0">
           <button type="button" class="close ml-1" data-dismiss="modal" aria-label="Close">
@@ -36,59 +40,72 @@
                 <div class="p-3 wrap">
                   <div class="pl-3 py-3 modal-container">
                     <div>
-                      <h6 class="modal-subtitle mb-3">STAY CURRENT</h6>
+                      <h6 class="modal-subtitle mb-3">Category</h6>
                       <h4 class="modal-title"><span>Sign Up</span> For <br>Our Newsletter</h4>
                       <hr>
-                      <p class="modal-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                      <div class="hide">
-                        <button class="btn btn-block rounded-0 border-0 btn-primary">
-    <span>SUBSCRIBE USING FACEBOOK</spam></button>
-                        <button class="btn btn-block rounded-0 border-0 btn-secondary" id="btn-form">
-    <span>SUBSCRIBE USING EMAIL</span></button>
-                      </div> <!-- /.hide -->
-                      <div class="show">
-                        <form>
-                          <div class="form-group mb-2">
-                            <input type="email" class="form-control rounded-0 border-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your email address">
-                          </div>
-                          <button class="btn btn-block btn-success rounded-0 border-0">Subscribe</button>
-                        </form>
-                      </div> <!-- /.show -->
+                      <p class="modal-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa.</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pr-0">
-                <img src="https://res.cloudinary.com/dt9b7pad3/image/upload/v1493819606/newsletter_left_image_nzdpnw.png">
+                <img
+                  src="https://res.cloudinary.com/dt9b7pad3/image/upload/v1493819606/newsletter_left_image_nzdpnw.png">
               </div>
-            </div><!-- /.row -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content rounded-0 border-0">
-      <button type="button" class="close ml-1" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+  <div id="myModal">
+    <div class="modal fade" id="imageModal" data-backdrop="static" tabindex="-1" role="dialog"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-0 border-0">
+          <button type="button" class="close ml-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-body py-0">
+            <div class="cards-wrapper">
+              <div class="card-wrapper">
+                <div class="card-1 card-object card-object-hf">
+                  <a class="face front" href="#">
+                    <div class="title-wrapper">
+                      <div class="title">Jenny</div>
+                      <div class="subtitle">felis hairyus</div>
+                    </div>
+                  </a>
+                  <a class="face back" href="#">
+                    <div class="img-wrapper">
+                      <div class="avatar"></div>
+                    </div>
+                    <div class="info-wrapper">
+                      <div class="info-title">Jenny</div>
+                      <ul class="info-content">
+                        <li class="info-content-item">Age <span>6 years</span></li>
+                        <li class="info-content-item">Length <span>46cm</span></li>
+                        <li class="info-content-item">Weight <span>4kg</span></li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
   {%endblock%}
 
   {% block scripts %}
@@ -97,4 +114,5 @@
   {% bootstrap_javascript %}
   {% endblock %}
 </body>
+
 </html>
