@@ -258,7 +258,3 @@ class ImageTestClass(TestCase):
         self.test.save_image()
         images = Image.filter_by_location("Nairobi")
         self.assertTrue(len(images) > 0)
-
-    
-
-

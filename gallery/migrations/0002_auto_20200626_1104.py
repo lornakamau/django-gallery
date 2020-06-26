@@ -16,11 +16,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='image',
             name='category',
-            field=models.ForeignKey(default='category', on_delete=django.db.models.deletion.DO_NOTHING, to='gallery.Category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='gallery.Category'),
         ),
         migrations.AlterField(
             model_name='image',
             name='location',
-            field=models.ForeignKey(default='location', on_delete=django.db.models.deletion.DO_NOTHING, to='gallery.Location'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='gallery.Location'),
         ),
     ]

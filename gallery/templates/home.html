@@ -1,1 +1,40 @@
-<h1>Tuko</h1>
+{% load bootstrap3 %}
+{% load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Picturesque - {{title}}</title>
+  {% else %}
+  <title> Picturesque </title>
+  {% endif %}
+
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  {% endblock %}
+
+</head>
+
+<body>
+  {% include "navbar.html" %}
+  {% block content %}
+
+  <h1>Tuko</h1>
+  {% for image in images %}
+  <h2>{{image.name}}</h2>
+  <img src="{{image.photo.url}}" alt="image">
+  {% endfor %}
+  {%endblock%}
+
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src=" {% static 'js/home.js' %}"></script>
+  {% bootstrap_javascript %}
+  {% endblock %}
+</body>
+
+</html>

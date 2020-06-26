@@ -40,8 +40,8 @@ class Image(models.Model):
     photo= models.ImageField(upload_to = 'images/')
     description = models.CharField(max_length = 40)
     name= models.CharField(max_length = 30)
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, default = "category")
-    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING, default = "location")
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
     post_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
