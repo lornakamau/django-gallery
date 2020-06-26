@@ -20,3 +20,11 @@ items.forEach((item, index) => {
   item.addEventListener('click', (e) => { handleIndicator(e.target)});
   item.classList.contains('is-active') && handleIndicator(item);
 });
+
+$('.modal').modal('show');
+
+
+$('#btn-form').on('click', function() {
+   $('.show').show();
+   $('.hide').hide();
+});

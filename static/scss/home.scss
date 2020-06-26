@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+$browser-context: 16; 
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+body {
+  background: #c4c1c7;
+}
+
+[data-component='cta-newsletter-modal'] {
+  #newsletter-modal .modal-body {
+    max-height: 405px;
+  }
+  .modal-dialog {
+    max-width: 690px;
+  }
+  .close {
+    font-size: em(20);
+    color: #000;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 10;
+  }
+  
+  .modal-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    color: #026ecc;
+    font-size: em(14);
+    font-weight: 700;
+  }
+  .modal-title {
+    font-size: em(30);
+    font-weight: 600;
+    line-height: 1.4;
+    span {
+      font-weight: 800;
+    }
+  }
+  .modal-text {
+    font-size: em(12);
+    font-weight: 600;
+    line-height: 2;
+  }
+  
+  .btn {
+    font-size: em(10);
+  }
+  .btn-primary {
+    background-color: #3382c7;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.9em 0.5em;
+    color: #fff;
+    line-height: normal;
+    span {
+    line-height: 3.4;
+    }
+    &:hover {
+      background-color: #3382c7;
+    }
+  }
+  .btn-secondary {
+    background-color: #252525;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.9em 0.5em;
+    color: #fff;
+    line-height: normal;
+    span {
+    line-height: 3.4;
+    }
+    &:hover {
+      background-color: #252525;
+      color: #fff;
+    }
+  }
+  .btn-primary:before {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-size: 2em;
+    width: (40em / 14);
+    float: left;
+    margin: -0.4em -0.2em;
+    padding: 0.76em 0.5em;
+    background: #4565a2;
+    content: "\f230";
+  }
+  .btn-secondary:before {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-size: 2em;
+    width: (40em / 14);
+    float: left;
+    margin: -0.4em -0.2em;
+    padding: 0.78em 0.5em;
+    background: #0f0f0f;
+    content: "\f1d8";
+  }
+  
+  img {
+    width: 100%;
+    max-height: 405px;
+  }
+  
+    /* Mobile Fixes */
+  @media screen and (max-width: 690px) {
+    img { height: 100%; }
+  }
+  @media screen and (max-width: 575px) {
+    .col-lg-6 { padding-left: 0; }
+  }
+  @media screen and (max-width: 370px) {
+    #eval-modal .modal-body { 
+      max-height: 100%;
+    }
+    .wrap { 
+      padding-bottom: 0rem !important; 
+    }
+    .modal-container { 
+      padding-left: 0.5rem !important; 
+      padding-right: 0.5rem !important; 
+      padding-bottom: 1.5rem !important; }
+    .btn { 
+      font-size: em(8); 
+    }
+    .form-control {
+      line-height: 1;
+    }
+  }
+  
+  
+  /* Form */
+  .show {
+    display: none;
+  }
+  .form-control {
+    line-height: 2.3;
+    background-color: #f5f5f5;
+    &:focus {
+      background-color: #f5f5f5;
+    }
+  }
+  ::-webkit-input-placeholder { 
+    color:    #252525;
+    font-size: em(10);
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+  }
+  :-moz-placeholder { 
+     color:    #252525;
+    font-size: em(10);
+     opacity:  1;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+  }
+  ::-moz-placeholder { 
+     color:    #252525;
+    font-size: em(10);
+     opacity:  1;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+  }
+  :-ms-input-placeholder { 
+    color:    #252525;
+    font-size: em(10);
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .btn-success {
+    background-color: #252525;
+    line-height: 3.7;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #252525;
+    }
+  }
+  
+
+}
