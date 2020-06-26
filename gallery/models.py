@@ -37,11 +37,11 @@ class Location(models.Model):
         return cls.objects.all()
 
 class Image(models.Model):
-    image= models.ImageField(upload_to = 'images/')
+    photo= models.ImageField(upload_to = 'images/')
     description = models.CharField(max_length = 40)
     name= models.CharField(max_length = 30)
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
-    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, default = "category")
+    location = models.ForeignKey(Location, on_delete=models.DO_NOTHING, default = "location")
     post_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -55,7 +55,7 @@ class Image(models.Model):
 
     @classmethod
     def update_image(cls,id,image):
-        cls.objects.filter(id=id).update(image=image)
+        cls.objects.filter(id=id).update(photo=image)
 
     @classmethod
     def get_image_by_id(cls,id):
@@ -76,3 +76,7 @@ class Image(models.Model):
         searched = Location.objects.get(name = location)
         images = Image.objects.filter(location = searched.id)
         return images 
+
+    @classmethod
+    def display_all_images(cls):
+        return cls.objects.all()
