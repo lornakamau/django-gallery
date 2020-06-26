@@ -58,3 +58,53 @@ class LocationTest(TestCase):
         self.tokyo.save_location()
         self.assertEqual(len(Location.display_all_locations()), 2)
     
+class CategoryTest(TestCase):
+    def setUp(self):
+        '''
+        Creates new instances before a test
+        '''
+        self.nature = Category(name = "nature")
+        self.animals = Category(name = "animals")
+
+    def tearDown(self):
+        '''
+        Clears database after each test
+        '''
+        Category.objects.all().delete()
+
+    def test_category_instance(self):
+        '''
+        test whether the new locations are an instance of the Location class
+        '''
+        self.assertTrue(isinstance(self.nature, Category))
+        self.assertTrue(isinstance(self.animals, Category))
+
+    def test_save_category_method(self):
+        '''
+        test whether new locations are added to the db 
+        '''
+        self.nature.save_category()
+        self.animals.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) == 2)
+
+    def test_delete_category(self):
+        '''
+        tests whether category is deleted
+        '''
+        self.nature.save_category()
+        self.animals.save_category()
+        categories1 = Category.objects.all()
+        self.assertEqual(len(categories1),2)
+        self.nature.delete_category()
+        categories2 = Category.objects.all()
+        self.assertEqual(len(categories2),1)
+
+    def test_update_category(self):
+        '''
+        tests whether the category name is updated
+        '''
+        self.nature.save_category()
+        self.nature.update_category(self.nature.id,'travel')
+        update = Category.objects.get(name = "travel")
+        self.assertEqual(update.name, 'travel')
