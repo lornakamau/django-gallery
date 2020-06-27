@@ -1,31 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap');
-
-body {
+body{
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
-
 .navbar {
-    position: fixed;
     text-align: center;
-    width: 100vw;
-    height: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     padding: 0 20px;
     border: 0 !important;
+} 
+.nav {
+    display: inline-flex;
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    align-items: baseline;
     background-color: #fff;
+    padding: 0 20px;
     box-shadow: 0 0 1.8rem rgba(0, 0, 0, .15);
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-}
-.nav a:hover{
-    text-decoration: none;
-}
-#brand {
+#brand{
     font-size: 22px;
 }
-
 .nav-item {
     color: #83818c;
     padding: 6px 20px;
@@ -59,8 +58,7 @@ nav{
 .nav-item:not(.is-active):hover {
     color: #333;
 }
-
-.nav-indicator {
+ .nav-indicator {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -70,10 +68,16 @@ nav{
     z-index: 1;
     border-radius: 8px 8px 0 0;
 }
+.navbar-right{
+    display: flex;
+    flex: right;
+    justify-content: flex-end;
+}
 
 #imageModal .modal-body {
     background-color: black;
 }
+
 
 .close {
     font-size: em(20);
@@ -107,11 +111,6 @@ nav{
     font-weight: 600;
     line-height: 2;
 }
-
-@media (min-width: 768px){
-.navbar {
-    border-radius: 0 !important;
-}}
 
 @media screen and (max-width: 690px) {
     img {
