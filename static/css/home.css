@@ -4,9 +4,12 @@ body {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
-
+.mt-5{
+    margin-top: 6rem;
+}
 .navbar {
     position: fixed;
+    top: 0;
     text-align: center;
     width: 100vw;
     height: 50px;
@@ -39,7 +42,6 @@ nav{
 }
 
 .nav-item:before {
-    content: "";
     position: absolute;
     bottom: -6px;
     left: 0;
@@ -71,10 +73,6 @@ nav{
     border-radius: 8px 8px 0 0;
 }
 
-#imageModal .modal-body {
-    background-color: black;
-}
-
 .close {
     font-size: em(20);
     color: #000;
@@ -84,7 +82,9 @@ nav{
     top: 0;
     z-index: 10;
 }
-
+.modal-body{
+    padding: 0;
+}
 .modal-subtitle {
     font-family: 'DM Sans', sans-serif;
     color: #026ecc;
