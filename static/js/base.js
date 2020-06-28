@@ -70,14 +70,14 @@ function openCard($card) {
     
 }
 
-function showModal(name,desc,url, loc,cat){
+function showModal(name,description,url,location,category){
   $("#img-name").text(name)
   $("#imageModal").modal("show")
   $(".modal-title").text(name)
   $(".mod-img").attr("src",url)
-  $("#img-desc").text(desc)
-  $("#img-loc").text("Location: " + loc)
-  $("#img-cat").text("Category: " + cat)
+  $("#img-desc").text(description)
+  $("#img-loc").text(location)
+  $("#img-cat").text(category)
   $("#copy-url").val(window.location.origin + url)
 }
 

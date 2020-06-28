@@ -1,10 +1,16 @@
+import numpy as np
 from django.shortcuts import render
 from django.http  import HttpResponse
 from .models import Image
 
 def home(request):
     images = Image.objects.all()
-    return render(request, 'home.html', {"images": images})
+    arr= np.array(images) 
+    newarr = np.array_split(arr,3)
+    first = newarr[0]
+    second = newarr[1]
+    third = newarr[2]
+    return render(request, 'home.html', {"first": first,"second": second,"third": third })
 
 def search_results(request):
 
