@@ -80,3 +80,6 @@ class Image(models.Model):
     @classmethod
     def display_all_images(cls):
         return cls.objects.all()
+
+    class Meta:
+        ordering = ['-post_date']

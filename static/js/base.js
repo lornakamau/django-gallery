@@ -70,17 +70,30 @@ function openCard($card) {
     
 }
 
-function showModal(name,description,url,location,category){
+function showModal(name,description,url,location,category,posted){
   $("#img-name").text(name)
   $("#imageModal").modal("show")
   $(".modal-title").text(name)
   $(".mod-img").attr("src",url)
   $("#img-desc").text(description)
   $("#img-loc").text(location)
-  $("#img-cat").text(category)
-  $("#copy-url").val(window.location.origin + url)
+  $("#img-cat").text("#" + category)
+  $("#img-pos").text(posted)
+  $("#copy-url").val(window.location.origin + "#" + name)
+  name=name
+  url=url
 }
+if(document.readyState === 'complete'){
+  if(window.location.href.indexOf("#" + name) > -1) {
+    var docName = document.getElementById("mod-title").innerHTML;
+    console.log(docName);
+    if (docName = name){
+      $(".img-thumbnail").css("background-color", "yellow")
+      alert("Alert: Desktop!")
+  }
+  }
 
+}
 function copy(){
   $("#copy-url").select()
   document.execCommand('copy');

@@ -1,23 +1,35 @@
-{%extends 'base.html'%} 
+{%extends 'base.html'%}
 {% block content %}
 <div class="container-fluid mt-5">
-
   <div class="row">
     {% if images%}
-      <h2>Found {{ images|length }} of searched term {{message}}</h2>
+    <h2>Found {{ images|length }} images under the category {{message}}</h2>
     {% else %}
-      <h2> Found 0 images for the search term {{message}}</h2>
+    <h2> {{message}}</h2>
     {% endif %}
-
   </div>
-
-  <div class="row">
-
-  {% if images %}
-  {% for image in images %}
-  <img src="{{image.photo.url}}" alt="image" data-toggle="modal" data-target="#imageModal">
-  {% endfor %}
-  {% endif %}
+  <div class="content">
+    <div>
+      {% for image in first %}
+      <img
+        onclick="showModal('{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.post_date}}') "
+        class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+      {%endfor%}
+    </div>
+    <div>
+      {% for image in second %}
+      <img
+        onclick="showModal('{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}')"
+        class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+      {%endfor%}
+    </div>
+    <div>
+      {% for image in third %}
+      <img
+        onclick="showModal('{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}')"
+        class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+      {%endfor%}
+    </div>
   </div>
 </div>
 {% endblock %}
