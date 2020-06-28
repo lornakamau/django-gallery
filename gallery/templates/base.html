@@ -26,20 +26,19 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="mod-title" id="img-name"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+          <h5 class="modal-title" id="img-name"></h5>
         </div>
         <div class="modal-body" style="position: relative;" class="text-centre">
-          <img alt="" class="mod-img">
+          <img alt="image" class="mod-img">
           <div class="details-content">
             <div class="img-share" onclick="copy()">
               <a id="share" class="share-icon" href="#"><i class="fas fa-share-alt"></i></a>
             </div>
-
             <div class="details-meta">
-                <a href="#" id="img-loc"></a>
+              <i class="fas fa-map-marker-alt"></i>&nbsp;<a href="#" id="img-loc" style="color: #333;"></a>
                 <time id="img-pos"></time>
             </div>
             <span id="img-cat" class="badge badge-secondary">Secondary</span>

@@ -85,7 +85,6 @@ nav {
 }
 
 .content {
-    /* margin: 3%; */
     display: grid;
     grid-gap: 24px;
     grid-template-columns: repeat(3, 1fr);
@@ -112,27 +111,10 @@ img {
     padding: 0;
 }
 
-.modal-subtitle {
-    font-family: 'DM Sans', sans-serif;
-    color: #026ecc;
-    font-size: em(14);
-    font-weight: 700;
-}
-
 .modal-title {
-    font-size: em(30);
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.4;
-}
-
-.modal-title span {
-    font-weight: 800;
-}
-
-.modal-text {
-    font-size: em(12);
-    font-weight: 600;
-    line-height: 2;
 }
 
 p {
@@ -140,54 +122,71 @@ p {
 }
 
 #img-desc {
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: 900;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-bottom: 3%;
 }
 
 .details-content {
     padding: 1.6rem;
     position: relative;
-  }
-  .img-share {
-	float: right;
-	position: relative;
-	margin-top: -42px;
+}
+
+.details-content a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.details-content a:hover {
+    color: #2980b9;
+}
+
+.img-share {
+    float: right;
+    position: relative;
+    margin-top: -42px;
 }
 
 .share-icon {
-	display: inline-block;
-	width: 48px;
-	height: 48px;
-	line-height: 48px;
-	text-align: center;
-	border-radius: 50%;
-	background-color: #fff;
-	transition: all 0.3s ease;
-	outline: 0;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    outline: 0;
     z-index: 2;
-	box-shadow: 
-	  		0 2px 4px rgba(0,0,0, 0.12),
-	    	0 2px 4px rgba(0,0,0, 0.24);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.12),
+        0 2px 4px rgba(0, 0, 0, 0.24);
 }
-	.share-icon:hover,
-	.share-icon:focus {
-		box-shadow: 
-	  		0 3px 6px rgba(0,0,0, 0.12),
-	    	0 3px 6px rgba(0,0,0, 0.24);
 
-	    -webkit-transform: scale(1.2);
-	    -moz-transform: scale(1.2);
-	    -ms-transform: scale(1.2);
-	    -o-transform: scale(1.2);
-	    transform: scale(1.2);
-    }
-    .details-meta time {
-        font-size: 1rem;
-        color: #bbb;
-        margin-left: 0.8rem;
-    }
+.share-icon:hover,
+.share-icon:focus {
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.12),
+        0 3px 6px rgba(0, 0, 0, 0.24);
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.details-meta time {
+    font-size: 1rem;
+    color: #767676;
+    margin-left: 0.8rem;
+}
+.badge{
+    margin-top: 1%;
+    font-size: 11px;
+}
+
 @media (min-width: 768px) {
     .navbar {
         border-radius: 0 !important;

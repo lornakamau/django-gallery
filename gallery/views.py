@@ -29,7 +29,7 @@ def search_results(request):
             message = f"{search}"
             return render(request, 'search.html',{"message":message,"images": images,"first": first,"second": second,"third": third})
         except ObjectDoesNotExist:
-            message = "NO ITEMS UNDER THAT CATEGORY"
+            message = "NO ITEMS UNDER CATEGORY: " + search.upper()
             return render(request, 'search.html',{"message":message}) 
 
     else:
