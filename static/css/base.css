@@ -24,9 +24,11 @@ body {
     background-color: #fff;
     box-shadow: 0 0 1.8rem rgba(0, 0, 0, .15);
 }
-.nav{
+
+.nav {
     padding-top: 2px;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -85,25 +87,34 @@ nav {
     z-index: 1;
     border-radius: 8px 8px 0 0;
 }
-.navbar-right{
+
+.navbar-right {
     margin-right: 0 !important;
 }
+
 .container-fluid {
     margin-top: 6%;
     margin-left: 2%;
     margin-right: 2%;
 }
-blockquote{
+
+blockquote {
     border-left: 0 !important;
 }
-blockquote footer{
+
+blockquote footer {
     color: orange;
 }
+
 .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr) !important;
     grid-gap: 20px;
     grid-auto-rows: auto;
+}
+
+.img-thumbnail {
+    cursor: pointer !important;
 }
 
 img {

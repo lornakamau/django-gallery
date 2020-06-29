@@ -76,7 +76,7 @@ def location(request, location_id):
         title = location.name
         return render(request, 'search.html',{"title":title, "message":message,"images": images,"first": first,"second": second,"third": third})
     except ObjectDoesNotExist:
-        message = "NO ITEMS UNDER LOCATION" + search.upper()
+        message = "NO ITEMS FOR THAT LOCATION"
         locations = Location.objects.all()
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "locations": locations})

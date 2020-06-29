@@ -8,21 +8,21 @@
     <div>
       {% for image in first %}
       <img
-        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
         class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
       {%endfor%}
     </div>
     <div>
       {% for image in second %}
       <img
-        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}')"
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}')"
         class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
       {%endfor%}
     </div>
     <div>
       {% for image in third %}
       <img
-        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}')"
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}')"
         class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
       {%endfor%}
     </div>

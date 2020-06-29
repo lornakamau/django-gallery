@@ -1,14 +1,18 @@
 {%extends 'base.html'%}
 {% block content %}
 <div style="align-content: center; margin-left: 3%; margin-right: 3%; margin-top: 5rem;">
+  <div class="col-md-2"></div>
+  <div class="col-md-8" style="padding-left: 14px; padding-right: 14px; position: static !important;">
   {% if image %}
     <img
-    onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
-    class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}" style="height: 90vh; align-self: center;">
+    onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
+    class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
   {% else %}
   <div class="message">
     {{message}}
   </div>
   {% endif %}
+  </div>
+  <div class="col-md-2"></div>
 </div>
 {% endblock %}
