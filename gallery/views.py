@@ -17,7 +17,6 @@ def home(request):
 def search_results(request):
     if 'category' in request.GET and request.GET["category"]:
         search = request.GET.get("category")
-        print(search)
         try:
             category = Category.objects.get(name = search)
             images = Image.search_image(category)
@@ -26,7 +25,7 @@ def search_results(request):
             first = newarr[0]
             second = newarr[1]
             third = newarr[2]
-            message = f"{search}"
+            message = f"Found {len(images)} image(s) under the category - {search}"
             return render(request, 'search.html',{"message":message,"images": images,"first": first,"second": second,"third": third})
         except ObjectDoesNotExist:
             message = "NO ITEMS UNDER CATEGORY " + search.upper()
@@ -56,8 +55,10 @@ def category(request, category_id):
         second = newarr[1]
         third = newarr[2]
         message = category.name
-        return render(request, 'search.html',{"message":message,"images": images,"first": first,"second": second,"third": third})
+        title = category.name
+        return render(request, 'search.html',{"title":title, "message":message,"images": images,"first": first,"second": second,"third": third})
     except ObjectDoesNotExist:
         message = "NO ITEMS UNDER CATEGORY " + search.upper()
         categories = Category.objects.all()
-        return render(request, 'search.html',{"message":message, "categories": categories}) 
+        title= "Not Found"
+        return render(request, 'search.html',{"title":title,"message":message, "categories": categories}) 

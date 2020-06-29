@@ -1,8 +1,12 @@
 {%extends 'base.html'%}
+{% load static %}
 {% block content %}
 <div class="container-fluid mt-5">
-  <div class="text-center" style="margin-top: 2%; margin-bottom: 1%;">
-    <h3 class="welcome" style="padding-left: 20%; padding-right: 20%;"><em>Welcome to Picturesque where I share a collection of my favorite photos from all around the world.</em></h3>
+  <div class="text-center" style="margin-top: 1%; margin-bottom: 1%;">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">It's the little things that matter.</p>
+      <footer class="blockquote-footer"><em>Lorna Kamau</em></footer>
+    </blockquote>
   </div>
   <div class="content">
     <div>
@@ -26,6 +30,11 @@
         class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
       {%endfor%}
     </div>
+  </div>
+  <div class="footer text-center" style="margin-top: 3%; margin-bottom: 2%;">
+    <img src="{% static 'images/logo.png' %}" alt="logo" style="width:32px; padding-bottom: 0 !important;">
+    <p>A photograph is a memory that lasts a lifetime</p>
+    <p>© 2020 Copyright: <a href="https://github.com/lornakamau">Lorna Kamau</a></p>
   </div>
 </div>
 {% endblock %}

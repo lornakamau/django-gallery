@@ -6,6 +6,7 @@ body {
     margin-top: 0 !important;
     padding-top: 0 !important;
     font-family: 'DM Sans', sans-serif;
+    height: 100%;
 }
 
 .mt-5 {
@@ -92,7 +93,12 @@ nav {
     margin-left: 2%;
     margin-right: 2%;
 }
-
+blockquote{
+    border-left: 0 !important;
+}
+blockquote footer{
+    color: orange;
+}
 .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr) !important;
