@@ -70,16 +70,18 @@ function openCard($card) {
     
 }
 
-function showModal(id,name,description,url,location,category,posted){
+function showModal(image_id,name,description,url,location,category,category_id,posted){
   $("#img-name").text(name)
   $("#imageModal").modal("show")
   $(".modal-title").text(name)
   $(".mod-img").attr("src",url)
   $("#img-desc").text(description)
   $("#img-loc").text(location)
+  var link = "/category/" + category_id
+  $("#img-cat").attr("href", link)
   $("#img-cat").text("#" + category)
   $("#img-pos").text(posted)
-  $("#copy-url").val(window.location.origin + "/image/" + id)
+  $("#copy-url").val(window.location.origin + "/image/" + image_id)
 }
 
 function share(){

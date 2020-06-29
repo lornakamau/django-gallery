@@ -1,18 +1,14 @@
 {%extends 'base.html'%}
+{% load static%}
 {% block content %}
-<div class="container-fluid mt-5">
-  <div class="row">
-    {% if images%}
-    <h2>Found {{ images|length }} images under the category {{message}}</h2>
-    {% else %}
-    <h2> {{message}}</h2>
-    {% endif %}
-  </div>
+<div class="container-fluid mt-5 text-center">
+  {% if images%}
+  <h2>Found {{ images|length }} image(s) under the category {{message}}</h2>
   <div class="content">
     <div>
       {% for image in first %}
       <img
-        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.post_date}}') "
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
         class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
       {%endfor%}
     </div>
@@ -31,5 +27,13 @@
       {%endfor%}
     </div>
   </div>
+  {% else %}
+  <img src="{% static 'images/not-found.png' %}" alt="not-found" style="width:20%; height: 20%;">
+  <h2>{{message}}</h2><br>
+  <h3>Here are some other categories you can check out:</h3>
+  {% for category in categories %}
+  <a href="/category/{{category.id}}" class="badge badge-secondary" style="margin-left: 1%;">#{{category.name}}</a>
+  {% endfor %}
+  {% endif %}
 </div>
 {% endblock %}

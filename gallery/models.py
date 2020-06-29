@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length = 30)
@@ -37,7 +38,7 @@ class Location(models.Model):
         return cls.objects.all()
 
 class Image(models.Model):
-    photo = models.ImageField(upload_to = 'images/')
+    photo = CloudinaryField('photo')
     name = models.CharField(max_length = 30)
     description = models.CharField(max_length = 80)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)

@@ -1,11 +1,14 @@
 {%extends 'base.html'%}
 {% block content %}
 <div class="container-fluid mt-5">
+  <div class="text-center" style="margin-top: 2%; margin-bottom: 1%;">
+    <h3 class="welcome" style="padding-left: 20%; padding-right: 20%;"><em>Welcome to Picturesque where I share a collection of my favorite photos from all around the world.</em></h3>
+  </div>
   <div class="content">
     <div>
       {% for image in first %}
       <img
-        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.post_date}}') "
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
         class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
       {%endfor%}
     </div>
