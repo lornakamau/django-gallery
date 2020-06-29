@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{% load static %}
 {% block content %}
 <div style="align-content: center; margin-left: 3%; margin-right: 3%; margin-top: 5rem;">
   <div class="col-md-2"></div>
@@ -7,6 +8,11 @@
     <img
     onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
     class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+    <div class="footer text-center" style="margin-top: 3%; margin-bottom: 2%; position: static !important;">
+      <img src="{% static 'images/logo.png' %}" alt="logo" style="width:32px; padding-bottom: 0 !important;">
+      <p>A photograph is a memory that lasts a lifetime</p>
+      <p>© 2020 Copyright: <a href="https://github.com/lornakamau" target="_blank">Lorna Kamau</a></p>
+    </div>
   {% else %}
   <div class="message">
     {{message}}
