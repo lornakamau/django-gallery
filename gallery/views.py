@@ -40,7 +40,7 @@ def search_results(request):
 def image(request, image_id):
     try:
         image = Image.objects.get(id=image_id)
-        print(image.name)
+        print(image.id)
     except ObjectDoesNotExist:
         message = "Image does not exist or may have been deleted!"
         return render(request, 'image.html', {"message":message})

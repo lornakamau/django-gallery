@@ -3,9 +3,8 @@
 <div style="align-content: center; margin-left: 3%; margin-right: 3%; margin-top: 5rem;">
   {% if image %}
     <img
-    onclick="showModal('{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.post_date}}') "
+    onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.category}}', '{{image.post_date}}') "
     class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}" style="height: 90vh; align-self: center;">
-  
   {% else %}
   <div class="message">
     {{message}}
