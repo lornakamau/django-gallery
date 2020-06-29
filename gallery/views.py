@@ -6,12 +6,13 @@ from django.core.exceptions import ObjectDoesNotExist
 
 def home(request):
     images = Image.objects.all()
+    print(images[0].category)
     arr= np.array(images) 
     newarr = np.array_split(arr,3)
     first = newarr[0]
     second = newarr[1]
     third = newarr[2]
-    return render(request, 'home.html', {"first": first,"second": second,"third": third })
+    return render(request, 'home.html', {"first": first,"second": second,"third": third})
 
 def search_results(request):
 
@@ -35,3 +36,12 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+def image(request, image_id):
+    try:
+        image = Image.objects.get(id=image_id)
+        print(image.name)
+    except ObjectDoesNotExist:
+        message = "Image does not exist or may have been deleted!"
+        return render(request, 'image.html', {"message":message})
+    return render(request, 'image.html', {"image":image})

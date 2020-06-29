@@ -37,9 +37,9 @@ class Location(models.Model):
         return cls.objects.all()
 
 class Image(models.Model):
-    photo= models.ImageField(upload_to = 'images/')
-    description = models.CharField(max_length = 40)
-    name= models.CharField(max_length = 30)
+    photo = models.ImageField(upload_to = 'images/')
+    name = models.CharField(max_length = 30)
+    description = models.CharField(max_length = 80)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
     post_date = models.DateTimeField(auto_now_add=True)

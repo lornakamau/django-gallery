@@ -83,20 +83,10 @@ function showModal(name,description,url,location,category,posted){
   name=name
   url=url
 }
-if(document.readyState === 'complete'){
-  if(window.location.href.indexOf("#" + name) > -1) {
-    var docName = document.getElementById("mod-title").innerHTML;
-    console.log(docName);
-    if (docName = name){
-      $(".img-thumbnail").css("background-color", "yellow")
-      alert("Alert: Desktop!")
-  }
-  }
 
-}
-function copy(){
+function share(){
   $("#copy-url").select()
   document.execCommand('copy');
-  alert("Link has been copied")
+  alert("Share link has been copied to your clipboard!")
 }
 
