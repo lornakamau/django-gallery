@@ -216,14 +216,17 @@ p {
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    position: sticky;
 }
 
 @media (min-width: 768px) {
     .navbar {
         border-radius: 0 !important;
+    }
+}
+@media (max-width: 767px) {
+    .navbar {
+        height: 7rem !important;
+        background-color: orangered;
     }
 }
