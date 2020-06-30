@@ -227,6 +227,8 @@ p {
 @media (max-width: 767px) {
     .navbar {
         height: 7rem !important;
-        background-color: orangered;
+    }
+    #brand{
+        font-size: 4rem;
     }
 }
