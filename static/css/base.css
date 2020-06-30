@@ -18,6 +18,7 @@ body {
     top: 0;
     text-align: center;
     width: 100vw;
+    height: 5rem;
     min-height: 5rem !important;
     padding: 0 10px;
     border: 0 !important;
