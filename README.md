@@ -1,3 +1,4 @@
+[![codebeat badge](https://codebeat.co/badges/726564b4-141f-4066-af7e-335e91a9a626)](https://codebeat.co/projects/github-com-lornakamau-django-gallery-master)
 # Picturesque
 #### Picturesque - a Django based personal gallery , 30/06/2020.
 #### By Lorna Kamau
