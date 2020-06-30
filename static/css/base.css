@@ -18,7 +18,7 @@ body {
     top: 0;
     text-align: center;
     width: 100vw;
-    height: 50px;
+    min-height: 5rem !important;
     padding: 0 10px;
     border: 0 !important;
     background-color: #fff;
@@ -39,7 +39,7 @@ nav {
 }
 
 #brand {
-    font-size: 28px;
+    font-size: 3rem;
     font-family: 'Chewy', cursive;
     letter-spacing: 1px;
 }
@@ -209,7 +209,7 @@ p {
 }
 
 .badge {
-    font-size: 12px;
+    font-size: 1rem;
     background-color: orange;
     margin-bottom: 1%;
 }
@@ -224,11 +224,5 @@ p {
 @media (min-width: 768px) {
     .navbar {
         border-radius: 0 !important;
-    }
-}
-
-@media (max-width: 580px) {
-    .nav {
-        overflow: auto;
     }
 }
