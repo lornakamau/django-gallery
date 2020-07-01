@@ -12,7 +12,9 @@ def home(request):
     first = newarr[0]
     second = newarr[1]
     third = newarr[2]
-    return render(request, 'home.html', {"first": first,"second": second,"third": third})
+    locations = Location.objects.all()
+    categories = Category.objects.all()
+    return render(request, 'home.html', {"first": first,"second": second,"third": third,"locations": locations,"categories": categories})
 
 def search_results(request):
     if 'category' in request.GET and request.GET["category"]:
